@@ -1,0 +1,20 @@
+     idx                                               name     score
+138  138     targsubtype1_txt__Teacher/Professor/Instructor  0.151997
+2      2                           country_txt__Afghanistan  0.138184
+5      5                               country_txt__Nigeria  0.124867
+307  307                                     gname__Unknown  0.079522
+645  645                                        nhostkid__1  0.072290
+553  553                          weaptype1_txt__Explosives  0.064161
+675  675                                        nhostkid__0  0.060312
+92    92  attacktype1_txt__Hostage Taking (Barricade Inc...  0.036245
+91    91       attacktype1_txt__Hostage Taking (Kidnapping)  0.029815
+573  573                        weapsubtype1_txt__Time Fuse  0.027272
+569  569                         weapsubtype1_txt__Landmine  0.026205
+471  471             gname__Palestinian Islamic Jihad (PIJ)  0.023741
+210  210                     targsubtype1_txt__Tour Bus/Van  0.023685
+63    63                                 country_txt__Ghana  0.023658
+506  506                                          nperps__4  0.023630
+43    43                            country_txt__Mauritania  0.023542
+219  219                               natlty1_txt__Somalia  0.022190
+0      0                                 country_txt__India  0.020772
+76    76                                 country_txt__Spain  0.012596

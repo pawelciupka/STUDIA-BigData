@@ -1,7 +1,10 @@
-import classification
+from config import Config
+from classification import Classification
+from result_presentation import ResultPresentation
 from pyspark.shell import spark
 from pyspark.ml import Pipeline
 from pyspark.ml.feature import StringIndexer, VectorAssembler, OneHotEncoder
+
 
 class Main:
     columns = None
@@ -13,7 +16,7 @@ class Main:
     
     def __init__(self, filename, columns):
         self.columns = columns
-        self.df = spark.read.csv(filename, inferSchema=True, header=True).select(columns)
+        self.df = spark.read.option("delimiter", ";").csv(filename, inferSchema=True, header=True).select(columns)
         self.df = self.df.dropna()
 
     def process_classification_data(self):
@@ -25,12 +28,12 @@ class Main:
         columns_in = featuresCols
         columns_out = []
         for col in featuresCols:
-            columns_out.append(col + '-  ')
+            columns_out.append(col + '_')
 
         indexers = [StringIndexer(inputCol=x, outputCol=x + '_tmp')
                     for x in columns_in]
 
-        encoders = [OneHotEncoder(dropLast=False, inputCol=x + "_tmp", outputCol=y)
+        encoders = [OneHotEncoder(dropLast=False, inputCol=x + '_tmp', outputCol=y)
                     for x, y in zip(columns_in, columns_out)]
         tmp = [[i, j] for i, j in zip(indexers, encoders)]
         tmp = [i for sublist in tmp for i in sublist]
@@ -39,7 +42,7 @@ class Main:
         cols_now = []
         for col in featuresCols:
             if col in columns_in:
-                cols_now.append(col + '-  ')
+                cols_now.append(col + '_')
             else:
                 cols_now.append(col)
 
@@ -56,13 +59,21 @@ class Main:
         self.training_data, self.test_data = self.processed_data.randomSplit([training_part, 1-training_part], seed=0)
 
     def classify(self):
-        print("\nclassifying")
-        c = classification.Classification(self.training_data, self.test_data)
+        print("\nclassify")
+        c = Classification(self.training_data, self.test_data)
         c.decision_tree_classifier()
         c.random_forest_classifier()
+        c.naive_bayes()
+        c.logistic_regression()
+        c.gbtc()
+        c.lsvc()
 
     def clusterize(self):
-        print("\nclustering")
+        print("\nclusterize")
+
+    def get_columns_results(self):
+        result_presentation = ResultPresentation(self.df)
+        result_presentation.get_value_count_for_columns(Config.detailed_columns)
 
     def run_all(self):
         self.process_classification_data()
@@ -71,8 +82,8 @@ class Main:
         self.clusterize()
 
 
-columns = ['country_txt', 'region_txt', 'suicide', 'attacktype1_txt', 'targtype1_txt', 'natlty1_txt', 'gname', 'weaptype1_txt', 'nkill', 'success']
 
-main = Main("global_terrorism_db.csv", columns)
+main = Main("data/global_terrorism_db.csv", Config.selected_columns)
+# main.get_columns_results()
 main.run_all()
 

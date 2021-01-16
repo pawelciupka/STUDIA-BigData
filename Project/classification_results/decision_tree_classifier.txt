@@ -1,0 +1,5 @@
+     idx                                    name     score
+471  471  gname__Palestinian Islamic Jihad (PIJ)  0.250515
+210  210          targsubtype1_txt__Tour Bus/Van  0.250171
+63    63                      country_txt__Ghana  0.249828
+43    43                 country_txt__Mauritania  0.249486
