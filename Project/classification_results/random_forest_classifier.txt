@@ -1,17 +1,13 @@
-     idx                                               name     score
-471  471             gname__Palestinian Islamic Jihad (PIJ)  0.265081
-210  210                     targsubtype1_txt__Tour Bus/Van  0.093608
-640  640                                         nkillus__1  0.089693
-219  219                               natlty1_txt__Somalia  0.083416
-94    94                     attacktype1_txt__Assassination  0.065278
-63    63                                 country_txt__Ghana  0.062112
-675  675                                        nhostkid__0  0.043903
-227  227                         natlty1_txt__United States  0.038026
-309  309                                     gname__Taliban  0.031248
-112  112                            targtype1_txt__Tourists  0.030357
-507  507                                          nperps__3  0.029765
-573  573                        weapsubtype1_txt__Time Fuse  0.028989
-256  256                                natlty1_txt__Israel  0.023975
-95    95                         attacktype1_txt__Hijacking  0.023967
-164  164  targsubtype1_txt__Radio Journalist/Staff/Facility  0.022242
-146  146                  targsubtype1_txt__Other Personnel  0.016317
+     idx                                           name     score
+573  573                    weapsubtype1_txt__Time Fuse  0.178914
+256  256                            natlty1_txt__Israel  0.138879
+292  292                             natlty1_txt__Ghana  0.125000
+639  639                                     nkillus__0  0.118905
+210  210                 targsubtype1_txt__Tour Bus/Van  0.117867
+146  146              targsubtype1_txt__Other Personnel  0.060880
+471  471         gname__Palestinian Islamic Jihad (PIJ)  0.060533
+321  321  gname__Al-Qaida in the Islamic Maghreb (AQIM)  0.054530
+569  569                     weapsubtype1_txt__Landmine  0.053420
+582  582                                       nkill__4  0.044825
+134  134     targsubtype1_txt__Village/City/Town/Suburb  0.011961
+103  103         targtype1_txt__Educational Institution  0.010188
